@@ -3,18 +3,34 @@
   padding: 30px 0 40px;
   color: $secondaryTextColor;
   line-height: 1.4;
-    .container {
-     display: flex;
-     padding: 0;
-      }
-    .col {
-      width: 25%;
-      margin-left: 20px;
-      margin-right: 0; 
+
+  .grid {
+    display: flex;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+    }
+  }
+
+  .col {
+    width: 25%;
+    padding-right: 30px;
+
+    @media (max-width: $xs) {
+      padding-right: 0;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
     .submit {
       display: inline-block;
-    }  
-    .input {
+    }
+
+    .text-field {
       margin: 6px 0;
       border: 0;
       border-radius: 6px;
@@ -22,6 +38,10 @@
       width: 100%;
       color: $secondaryTextColor;
       background-color: darken($borderColor, 10);
+
+      &.textarea {
+        height: 50px;
+      }
     }
 
     button {
@@ -31,7 +51,7 @@
       font-weight: bold;
       font-size: 12px;
     }
-   }
+ }
 
   h3 {
     color: $textColor;
@@ -44,12 +64,14 @@
 
   a {
     color: $activeColor;
-  }  
+  }
 }
 
 .footer-nav {
+  padding-left: 15px;
   list-style-type: square;
-    li {
+
+  li {
     padding: 2px 0;  
     margin-bottom: 10px;
     border-bottom: 1px solid darken($secondaryTextColor, 30);
@@ -61,17 +83,10 @@
   border-top: 2px solid darken($borderColor, 10);
   background-color: darken($borderColor, 5);
   padding: 10px 0;
-    .container {
-      display: flex;
-      justify-content: space-between;
-    }
+
+  .grid {
+    display: flex;
+    justify-content: space-between;
+  }
 }
-
-.copy {
-      display: block;
-    }
-
-.template {
-      display: block;
-    }
 
