@@ -31,4 +31,37 @@
   }
 }
 
+@media (max-width: $xs) {
+  .header {
+    flex-direction: column;
+
+    .logo {
+      margin-bottom: 10px;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      text-align: center;
+
+      li {
+        width: 100%;
+
+        a {
+          display:block;
+          font-size: 18px;
+          width: 100%;
+          padding: 10px 0;
+          margin-bottom: 1px;
+          border: 2px solid $borderColor;
+          border-radius: 6px;
+          background-color: darken($borderColor, 10);
+        }
+      }
+    }
+    nav {
+      width: 100%;
+    }
+  }
+}
+
 
