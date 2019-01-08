@@ -17,6 +17,10 @@ html, body {
 body {
   font-family: 'Georgia', sans-serif;
   font-size: 14px;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 @import 'layouts/header';
@@ -61,5 +65,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .img-container {
   overflow: hidden;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.5);
+  z-index: 5;
+
+  &.active {
+    display: block;
+  }
 }
 

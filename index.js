@@ -1,5 +1,11 @@
 // @prepros-prepend node_modules/jquery/dist/jquery.min.js
 
-var currentYear = new Date().getFullYear()
+$('#sandwich-btn').on('click', function () {
+  $('.nav-list, #overlay').toggleClass('active')
+  $('body').toggleClass('no-scroll')
+})
 
-$('.copy-sign').append(currentYear)
+$('#overlay').on('click', function () {
+  $(this).add('.nav-list').toggleClass('active')
+  $('body').toggleClass('no-scroll')
+})

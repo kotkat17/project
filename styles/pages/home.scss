@@ -28,6 +28,12 @@
       }
     }
 
+    img {
+        max-width: 380px;
+        border: 20px solid $borderColor;
+        border-radius: 50%;
+      }
+
     .col {
       width: 50%;
       padding: 20px 40px 20px 40px;
@@ -35,12 +41,6 @@
       &.col-aside {
         padding-left: 0;
         padding-right: 60px;
-      }
-
-      img {
-        max-width: 380px;
-        border: 20px solid $borderColor;
-        border-radius: 50%;
       }
     }
 
@@ -69,31 +69,35 @@
         padding: 10px 0 10px 0;
 
         .col {
-          width: 90%;
+          width: 100%;
           padding: 0;
           margin: 0 auto;
 
           &.col-aside {
             padding: 0;
           }
-
-         img {
-          width: 260px;
-          margin: auto;
-          border: 10px solid $borderColor;
-         }
         }
+      }
+
+      img {
+          max-width: 260px;
+          margin: auto;
+          border: 8px solid $borderColor;
+      }
 
       .info-box {
-        padding: 20px;
+        padding: 20px 10px;
         text-align: center;
 
         h2 {
-          font-size: 34px;
+          font-size: 30px;
         }
-       }
+
+        a {
+        padding: 8px 12px;
+        }
+      }
     }
-  }
 }
     // list servises
 
@@ -150,10 +154,19 @@
       @media (max-width: $xs) {
           padding-top: 0;
 
-          li{
-            padding: 5px;
-            width: 50%;
+          .content {
+            border: 4px solid $borderColor;
           }
+
+          li {
+            padding: 2px 20px;
+            width: 100%;
+
+          }
+
+          h2 {
+              font-size: 28px;
+            }
         }
     }
 
@@ -169,7 +182,12 @@
         position: relative;
 
         @media (max-width: $xs) {
-        width: 50%;
+        width: 100%;
+        padding: 4px 40px;
+
+        h3 {
+          font-size: 20px;
+        }
         }
 
       }

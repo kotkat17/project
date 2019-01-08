@@ -4,7 +4,6 @@
   justify-content: space-between;
   margin: 30px 0 20px;
 
-  .logo {
     h1 {
       font-size: 28px;
     }
@@ -12,6 +11,9 @@
     h4 {
      font-size: 14px; 
     }
+
+  .resp-menu {
+    display: none;
   }
 
   .nav-list {
@@ -23,7 +25,7 @@
       font-size: 13px;
       padding: 10px 20px;
 
-      &:hover {
+      .no-touch &:hover {
         background: $activeColor;
         border-radius: 6px;
       }
@@ -33,33 +35,60 @@
 
 @media (max-width: $xs) {
   .header {
-    flex-direction: column;
+    margin: 20px 0 25px;
 
-    .logo {
-      margin-bottom: 10px;
+    h1 {
+      font-size: 24px;
+    }
+
+    h4 {
+     font-size: 12px; 
     }
 
     .nav-list {
+      display: flex;
+      position: fixed;
+      top: 5px;
+      right: -100%;
+      bottom: 0;
       flex-direction: column;
       text-align: center;
+      z-index: 10;
+      transition: right 0.2s ease;
+      background-color: $secondaryColor;
+
+      &.active {
+        right: 0;
+      }
 
       li {
         width: 100%;
 
         a {
-          display:block;
+          display: block;
           font-size: 18px;
           width: 100%;
-          padding: 10px 0;
-          margin-bottom: 1px;
-          border: 2px solid $borderColor;
-          border-radius: 6px;
-          background-color: darken($borderColor, 10);
+          padding: 20px 10px;
+          background-color: $primaryColor;
+          border-bottom: 2px solid $activeColor;
+
+          &:active {
+            background-color: $activeColor;
+          }
         }
       }
     }
-    nav {
-      width: 100%;
+
+    #sandwich-btn {
+      width: 40px;
+      height: 40px;
+      background: url(/icons/paralel.png) no-repeat;
+      background-size: 100%;
+      border-radius: 30%;
+
+      &:active {
+        background-color: $activeColor;
+      }
     }
   }
 }
